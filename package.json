@@ -1,0 +1,28 @@
+{
+  "name": "geojsonio-cli",
+  "version": "0.0.0",
+  "description": "a cli for geojson.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapbox/geojsonio-cli.git"
+  },
+  "keywords": [
+    "geojson.io",
+    "cli",
+    "pipe"
+  ],
+  "author": "Tom MacWright",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/mapbox/geojsonio-cli/issues"
+  },
+  "dependencies": {
+    "opener": "~1.3.0",
+    "concat-stream": "~1.0.1",
+    "minimist": "0.0.2"
+  }
+}
