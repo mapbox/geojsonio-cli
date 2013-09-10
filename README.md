@@ -2,11 +2,18 @@
 
 _wip / nonfunctional_
 
-### example
+### usage
+
+Read or pipe a file
+
+    geojsonio map.geojson
+    cat map.geojson | geojsonio
+
+Options:
+
+    --print prints the url rather than opening it
+    --domain="http://custominstancedomain.com/"
+
+### installation
 
     npm install -g geojsonio-cli
-
-```
-geojsonio map.geojson
-cat map.geojson | geojsonio
-```

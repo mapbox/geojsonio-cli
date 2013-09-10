@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "geojsonio": "geojsonio.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mapbox/geojsonio-cli.git"
