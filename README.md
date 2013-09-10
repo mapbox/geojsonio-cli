@@ -1,7 +1,8 @@
 # geojsonio-cli
 
 Shoot files from your shell to [geojson.io](http://geojson.io/) for lightning-fast
-visualization and editing.
+visualization and editing. This is a [node.js](http://nodejs.org) module and thus requires
+node.
 
 Read or pipe a file
 
