@@ -2,11 +2,11 @@
 
 var concat = require('concat-stream'),
     opener = require('opener'),
+    tty = require('tty'),
     fs = require('fs'),
     argv = require('minimist')(process.argv.slice(2));
 
-
-if (argv.help || argv.h) return help();
+if (argv.help || argv.h || !(argv._[0] || !tty.isatty(0))) return help();
 
 ((argv._[0] && fs.createReadStream(argv._[0])) || process.stdin).pipe(concat(openData));
 
