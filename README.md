@@ -1,8 +1,7 @@
 # geojsonio-cli
 
-_wip / nonfunctional_
-
-### usage
+Shoot files from your shell to [geojson.io](http://geojson.io/) for lightning-fast
+visualization and editing.
 
 Read or pipe a file
 
