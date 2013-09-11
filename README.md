@@ -7,7 +7,7 @@ node.
 Read or pipe a file
 
     geojsonio map.geojson
-    cat map.geojson | geojsonio
+    geojsonio < run.geojson
 
 Options:
 
@@ -17,3 +17,7 @@ Options:
 ### installation
 
     npm install -g geojsonio-cli
+
+### see also
+
+* [pipe wkt through wellknown into geojsonio to get magic](https://github.com/mapbox/wellknown)
