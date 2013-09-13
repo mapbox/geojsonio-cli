@@ -12,9 +12,15 @@ if (argv.help || argv.h || !(argv._[0] || !tty.isatty(0))) return help();
 
 function openData(body) {
     try {
-        (argv.print ? console.log : opener)((argv.domain || 'http://geojson.io/') +
+        var url = (argv.domain || 'http://localhost:3000/') +
             '#data=data:application/json,' + encodeURIComponent(
-            JSON.stringify(JSON.parse(body.toString()))));
+            JSON.stringify(JSON.parse(body.toString())));
+
+        if (process.stdout.isTTY) {
+            (argv.print ? console.log : opener)(url);
+        } else {
+            process.stdout.write(body);
+        }
     } catch(e) {
         console.error('Valid GeoJSON file required as input.');
         help();
