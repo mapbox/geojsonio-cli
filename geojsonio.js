@@ -3,6 +3,7 @@
 var concat = require('concat-stream'),
     opener = require('opener'),
     tty = require('tty'),
+    path = require('path'),
     fs = require('fs'),
     argv = require('minimist')(process.argv.slice(2));
 
@@ -21,4 +22,4 @@ function openData(body) {
     }
 }
 
-function help() { fs.createReadStream('README.md').pipe(process.stdout); }
+function help() { fs.createReadStream(path.join(__dirname, 'README.md')).pipe(process.stdout); }
