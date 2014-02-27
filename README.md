@@ -49,3 +49,13 @@ copy the generated url instead of opening it in a browser (on OSX)
 ```sh
 geojsonio foo.geojson --print | pbcopy
 ```
+
+simplify geojson with [simplify-geojson](https://github.com/maxogden/simplify-geojson)
+
+```sh
+npm install simplify-geojson geojsonio-cli csv2geojson -g
+curl https://raw.github.com/maxogden/simplify-geojson/master/test-data/oakland-route.csv | \
+  csv2geojson --lat "LATITUDE N/S" --lon "LONGITUDE E/W" --line true | \
+  simplify-geojson -t 0.001 | \
+  geojsonio
+```
