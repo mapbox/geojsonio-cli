@@ -7,13 +7,15 @@ var concat = require('concat-stream'),
     fs = require('fs'),
     GitHubApi = require('github'),
     github = new GitHubApi({
-        version: "3.0.0",
-        protocol: "https"
+        version: '3.0.0',
+        protocol: 'https'
     });
     argv = require('minimist')(process.argv.slice(2));
     MAX_URL_LEN = 150e3;
 
-if (argv.help || argv.h || !(argv._[0] || !tty.isatty(0))) return help();
+if (argv.help || argv.h || !(argv._[0] || !tty.isatty(0))) {
+    return help();
+}
 
 ((argv._[0] && fs.createReadStream(argv._[0])) || process.stdin).pipe(concat(openData));
 
@@ -23,16 +25,18 @@ function openData(body) {
             JSON.stringify(JSON.parse(body.toString()))));
     } else {
         github.gists.create({
-        "description": "",
-        "public": true,
-        "files": {
-            "map.geojson": {"content": JSON.stringify(JSON.parse(body.toString()))}
-        }
+            description: '',
+            public: true,
+            files: {
+                'map.geojson': {
+                    content: JSON.stringify(JSON.parse(body.toString()))
+                }
+            }
         }, function (err, res) {
             if (err) {
-                console.error("Unable to create Gist:" + JSON.stringify(res));
+                console.error('Unable to create Gist:' + JSON.stringify(res));
             } else {
-                displayResource("#id=gist:/" + res.id);
+                displayResource('#id=gist:/' + res.id);
             }
         });
     }
@@ -48,4 +52,6 @@ function displayResource(path) {
     }
 }
 
-function help() { fs.createReadStream(path.join(__dirname, 'README.md')).pipe(process.stdout); }
+function help() {
+    fs.createReadStream(path.join(__dirname, 'README.md')).pipe(process.stdout);
+}

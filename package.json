@@ -27,5 +27,8 @@
     "opener": "~1.3.0",
     "concat-stream": "~1.0.1",
     "minimist": "0.0.2"
+  },
+  "devDependencies": {
+    "github": "~0.1.15"
   }
 }
