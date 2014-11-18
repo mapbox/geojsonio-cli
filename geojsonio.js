@@ -34,7 +34,7 @@ function openData(body) {
             }
         }, function (err, res) {
             if (err) {
-                console.error('Unable to create Gist:' + JSON.stringify(res));
+                console.error('Unable to create Gist: ' + JSON.stringify(err));
             } else {
                 displayResource('#id=gist:/' + res.id);
             }
