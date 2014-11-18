@@ -1,6 +1,6 @@
 {
   "name": "geojsonio-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "a cli for geojson.io",
   "main": "index.js",
   "scripts": {
