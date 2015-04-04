@@ -23,7 +23,7 @@ Options:
 [pipe wkt through wellknown into geojsonio to get magic](https://github.com/mapbox/wellknown):
 
 ```sh
-npm install -g geojson-cli
+npm install -g geojsonio-cli
 npm install -g wellknown
 echo "MultiPoint(0 0, 1 1, 3 3)" | wellknown | geojsonio
 ```
@@ -31,7 +31,7 @@ echo "MultiPoint(0 0, 1 1, 3 3)" | wellknown | geojsonio
 [pipe grep'ed geojson through geojsonify](https://github.com/blackmad/geojsonify):
 
 ```sh
-npm install -g geojson-cli
+npm install -g geojsonio-cli
 npm install -g geojsonify
 grep -h something *json | geojsonify | geojsonio-cli
 ```
@@ -39,7 +39,7 @@ grep -h something *json | geojsonify | geojsonio-cli
 [convert kml or gpx to geojson and push it to geojson.io](https://github.com/mapbox/togeojson):
 
 ```sh
-npm install -g geojson-cli
+npm install -g geojsonio-cli
 npm install -g togeojson
 togeojson foo.kml | geojsonio
 ```
