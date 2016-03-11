@@ -59,3 +59,7 @@ curl https://raw.github.com/maxogden/simplify-geojson/master/test-data/oakland-r
   simplify-geojson -t 0.001 | \
   geojsonio
 ```
+
+## Ports
+
+* [AJ Ashton ported geojsonio-cli to shell/perl](https://gist.github.com/ajashton/6504728)
