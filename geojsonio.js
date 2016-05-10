@@ -11,7 +11,8 @@ var concat = require('concat-stream'),
         protocol: 'https'
     });
     argv = require('minimist')(process.argv.slice(2));
-    MAX_URL_LEN = 150e3;
+    MAX_URL_LEN = 150e3,
+    BIG_LEN = 5000000;
 
 if (argv.help || argv.h || !(argv._[0] || !tty.isatty(0))) {
     return help();
@@ -20,6 +21,9 @@ if (argv.help || argv.h || !(argv._[0] || !tty.isatty(0))) {
 ((argv._[0] && fs.createReadStream(argv._[0])) || process.stdin).pipe(concat(openData));
 
 function openData(body) {
+    if (body.length > BIG_LEN) {
+        console.error('This file is very large, and will likely display slowly on geojson.io');
+    }
     if (body.length <= MAX_URL_LEN) {
         displayResource('#data=data:application/json,' + encodeURIComponent(
             JSON.stringify(JSON.parse(body.toString()))));

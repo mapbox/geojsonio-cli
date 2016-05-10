@@ -19,7 +19,7 @@
     "pipe"
   ],
   "author": "Tom MacWright",
-  "license": "BSD",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/mapbox/geojsonio-cli/issues"
   },
