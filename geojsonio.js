@@ -5,6 +5,7 @@ var concat = require('concat-stream'),
     tty = require('tty'),
     path = require('path'),
     fs = require('fs'),
+    validator = require('geojsonhint'),
     GitHubApi = require('github'),
     github = new GitHubApi({
         version: '3.0.0',
@@ -25,8 +26,12 @@ function openData(body) {
         console.error('This file is very large, and will likely display slowly on geojson.io');
     }
     if (body.length <= MAX_URL_LEN) {
+      if (validator.hint(JSON.parse(body.toString())).length == 0) {
         displayResource('#data=data:application/json,' + encodeURIComponent(
             JSON.stringify(JSON.parse(body.toString()))));
+      } else {
+        console.log("this is not valid GeoJSON");
+      }
     } else {
         github.gists.create({
             description: '',

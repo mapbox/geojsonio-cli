@@ -27,6 +27,7 @@
     "opener": "~1.3.0",
     "concat-stream": "~1.0.1",
     "minimist": "0.0.2",
-    "github": "~0.1.15"
+    "github": "~0.1.15",
+    "geojsonhint": "1.2.1"
   }
 }
