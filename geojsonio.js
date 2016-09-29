@@ -26,12 +26,16 @@ function openData(body) {
         console.error('This file is very large, and will likely display slowly on geojson.io');
     }
     if (body.length <= MAX_URL_LEN) {
-      if (validator.hint(JSON.parse(body.toString())).length == 0) {
-        displayResource('#data=data:application/json,' + encodeURIComponent(
-            JSON.stringify(JSON.parse(body.toString()))));
-      } else {
-        console.log("this is not valid GeoJSON");
-      }
+        var errors = validator.hint(JSON.parse(body.toString()));
+        if (errors.length == 0) {
+            displayResource('#data=data:application/json,' + encodeURIComponent(
+                JSON.stringify(JSON.parse(body.toString()))));
+        } else {
+            console.log("This is not valid GeoJSON. Errors:\n");
+            errors.forEach(function (error) {
+                console.log(error.message);
+            });
+        }
     } else {
         github.gists.create({
             description: '',
