@@ -24,9 +24,9 @@
     "url": "https://github.com/mapbox/geojsonio-cli/issues"
   },
   "dependencies": {
-    "concat-stream": "~1.5.2",
+    "concat-stream": "~1.6.0",
     "geojsonhint": "2.0.0",
-    "github": "~3.1.1",
+    "github": "~8.1.0",
     "minimist": "1.2.0",
     "opener": "~1.4.2"
   }
