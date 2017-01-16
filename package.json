@@ -29,5 +29,13 @@
     "github": "~8.1.0",
     "minimist": "1.2.0",
     "opener": "~1.4.2"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^1.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
