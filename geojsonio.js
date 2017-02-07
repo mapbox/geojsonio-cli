@@ -26,8 +26,14 @@ function openData(body) {
         console.error('This file is very large, and will likely display slowly on geojson.io');
     }
     if (body.length <= MAX_URL_LEN) {
-        var errors = validator.hint(JSON.parse(body.toString()));
+        var messages = validator.hint(JSON.parse(body.toString()));
+        var errors = messages.filter(function (message) {
+          return !message.hasOwnProperty('level') || message.level !== 'message';
+        })
         if (errors.length == 0) {
+            messages.forEach(function (message) {
+                console.log(message.message);
+            });
             displayResource('#data=data:application/json,' + encodeURIComponent(
                 JSON.stringify(JSON.parse(body.toString()))));
         } else {
