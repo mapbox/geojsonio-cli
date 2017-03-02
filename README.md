@@ -1,5 +1,7 @@
 # geojsonio-cli
 
+<img src='https://i.imgur.com/QQmDh2A.gif' width='100%' />
+
 Shoot files from your shell to [geojson.io](http://geojson.io/) for lightning-fast
 visualization and editing. This is a [node.js](http://nodejs.org) module and thus requires
 node.
