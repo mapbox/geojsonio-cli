@@ -5,7 +5,7 @@ var concat = require('concat-stream'),
     tty = require('tty'),
     path = require('path'),
     fs = require('fs'),
-    validator = require('geojsonhint'),
+    validator = require('@mapbox/geojsonhint'),
     GitHubApi = require('github'),
     github = new GitHubApi({
         version: '3.0.0',
