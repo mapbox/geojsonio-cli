@@ -24,14 +24,14 @@
     "url": "https://github.com/mapbox/geojsonio-cli/issues"
   },
   "dependencies": {
+    "@mapbox/geojsonhint": "^2.0.1",
     "concat-stream": "~1.6.0",
-    "geojsonhint": "2.0.0",
-    "github": "~8.1.0",
+    "github": "^9.2.0",
     "minimist": "1.2.0",
     "opener": "~1.4.2"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^1.2.0"
+    "cz-conventional-changelog": "^2.0.0"
   },
   "config": {
     "commitizen": {
