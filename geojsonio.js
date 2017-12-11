@@ -45,7 +45,7 @@ function openData(body) {
     } else {
         github.gists.create({
             description: '',
-            public: true,
+            public: false,
             files: {
                 'map.geojson': {
                     content: JSON.stringify(JSON.parse(body.toString()))
